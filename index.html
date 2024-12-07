@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dog API</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="validation.css" />
+  </head>
+  <body style="background-color: rgb(128, 218, 197)">
+    <div class="container">
+      <div class="row my-4">
+        <div class="col-12">
+          <h1>Dog API &#128021;</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <form id="dogs-form">
+            <div class="form-group mb-2">
+              <label for="breed">Breed:</label>
+              <select class="form-control" name="breed" id="breed">
+                <option value="" disabled selected>
+                  Please select a breed
+                </option>
+              </select>
+              <small class="error" aria-live="polite"></small>
+            </div>
+            <div class="form-group mb-2">
+              <label for="type">Subtype:</label>
+              <select class="form-control" name="type" id="type">
+                <option value="" disabled selected>Please select a type</option>
+              </select>
+              <small class="error" aria-live="polite"></small>
+            </div>
+            <div class="form-group mb-2">
+              <input
+                id="submit"
+                class="btn btn-primary"
+                type="submit"
+                value="Get Dogs"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="col-md-7 offset-md-1" id="dogs-container">
+          <img src="stock-illustration-cartoon-dog-over-bone.jpg" alt="dog" />
+        </div>
+      </div>
+      <div class="row">
+        <button id="throw-bone">Throw Bone</button>
+        <img src="bone.jpg" width="10%" />
+      </div>
+      <hr />
+      <div class="row">
+        <button id="run-dog" style="height: 50px">Run Dog</button>
+        <img src="dog-running.jpg" width="15%" />
+      </div>
+    </div>
+    <script src="list-all-breeds.js"></script>
+    <script src="validation.js"></script>
+    <script src="dogs.js"></script>
+    <script src="animation.js"></script>
+  </body>
+</html>

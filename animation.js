@@ -4,17 +4,24 @@ const imgElDog = document.getElementsByTagName("img")[2];
 let x = 0;
 let y = 0;
 let deg = 0;
-let direction = 1;
+let direction = 1.5;
 let directionDog = 3;
 let found = false;
+let degreesToRotate = 5;
 
 const animate = function () {
   x += direction;
-  deg += 5;
+  deg += degreesToRotate;
   if (y >= x) {
     direction = -3;
     directionDog = -3;
+    degreesToRotate = 5;
     found = true;
+  }
+  if (x > 700) {
+    direction = 0;
+    degreesToRotate = 0;
+    x = 700;
   }
   if (x < window.innerWidth && x >= 0) {
     imgEl.style.transform = `translateX(${x}px) rotateX(${deg}deg) rotateY(${deg}deg) rotateZ(${deg}deg)`;
@@ -28,7 +35,7 @@ const throwBone = document.getElementById("throw-bone");
 throwBone.addEventListener("click", () => {
   x = 0;
   imgEl.style.transform = `translateX(${x}px)`;
-  direction = 1;
+  direction = 1.5;
   requestAnimationFrame(animate);
 });
 

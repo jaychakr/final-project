@@ -25,17 +25,13 @@ breedEl.addEventListener("change", function (e) {
 });
 
 const fetchDogs = (breed, type) => {
-  console.log(breed);
   const BASE_URL = "https://dog.ceo/api/breed/hound/afghan/images/random";
   let url = "https://dog.ceo/api/breed/";
   if (breed.length) {
     url += breed + "/";
-    localStorage.setItem("breed", breedEl.value);
-    localStorage.setItem("sub-breed", "");
   }
   if (type.length) {
     url += type + "/";
-    localStorage.setItem("sub-breed", typeEl.value);
   }
   url += "images/random";
   fetch(url)
@@ -70,6 +66,8 @@ formEl.addEventListener("submit", function (e) {
     (listAllBreeds.message[breedEl.value].length === 0 ||
       validateSubBreed(typeEl, errors[1]))
   ) {
+    localStorage.setItem("breed", breedEl.value);
+    localStorage.setItem("sub-breed", typeEl.value);
     fetchDogs(breedEl.value, typeEl.value);
   }
 });
